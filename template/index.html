@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Match count - {{count}}
+
+<table>
+    {% for section in sections %}
+    <TR>
+       <TD class="c1"> Sport - {{section.sport.name}} </TD>
+       <TD class="c2"> Section - {{section.name}} </TD>
+    </TR>
+        {% for event_obj in section.events %}
+        <TR>
+            <TD class="c3"> Name:  {{event_obj.name}} </TD>
+            <TD class="c3"> Score: {{event_obj.score}} </TD>
+            <TD class="c3"> StartTime: {{event_obj.startTime}} </TD>
+
+        </TR>
+        {% endfor %}
+    {% endfor %}
+</table>
+</body>
+</html>
